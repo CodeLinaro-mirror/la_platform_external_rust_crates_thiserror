@@ -1,3 +1,6 @@
+#![deny(clippy::all, clippy::pedantic)]
+#![allow(clippy::option_if_let_else)]
+
 use std::fmt::Display;
 use thiserror::Error;
 
@@ -39,8 +42,7 @@ pub enum RustupError {
         "toolchain '{name}' does not contain component {component}{}",
         .suggestion
             .as_ref()
-            .map(|s| format!("; did you mean '{}'?", s))
-            .unwrap_or_else(String::new),
+            .map_or_else(String::new, |s| format!("; did you mean '{}'?", s)),
     )]
     UnknownComponent {
         name: String,
