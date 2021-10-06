@@ -46,13 +46,14 @@ rust_library {
     proc_macros: ["libthiserror_impl"],
     apex_available: [
         "//apex_available:platform",
+        "com.android.compos",
         "com.android.virt",
     ],
 }
 
 // dependent_library ["feature_list"]
-//   proc-macro2-1.0.27 "default,proc-macro"
+//   proc-macro2-1.0.28 "default,proc-macro"
 //   quote-1.0.9 "default,proc-macro"
-//   syn-1.0.73 "clone-impls,default,derive,parsing,printing,proc-macro,quote"
-//   thiserror-impl-1.0.25
+//   syn-1.0.74 "clone-impls,default,derive,parsing,printing,proc-macro,quote"
+//   thiserror-impl-1.0.26
 //   unicode-xid-0.2.2 "default"
